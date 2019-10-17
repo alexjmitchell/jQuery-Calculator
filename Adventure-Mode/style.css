@@ -1,0 +1,95 @@
+html {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+.container {
+  display: grid;
+  width: 500px;
+  height: 500px;
+  gap: 1px;
+  margin: auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    "#clear #result #result #result"
+    ".operator .operator .operator .operator";
+}
+
+#results {
+  grid-column: 2 / span 4;
+  grid-row: 1;
+  grid-area: "#result";
+  border: 1px grey solid;
+  background: green;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#clear {
+  grid-column: 1 /1;
+  grid-row: 1;
+  grid-area: "#clear";
+}
+
+.operators {
+  grid-column: 4 / 4;
+  grid-area: ".operator";
+  background: limegreen;
+}
+
+#num7,
+#num8,
+#num9 {
+  grid-row: 2;
+}
+
+#num4,
+#num5,
+#num6 {
+  grid-row: 3;
+}
+
+#num1,
+#num2,
+#num3 {
+  grid-row: 4;
+}
+
+#decimal {
+  grid-column: 2;
+  grid-row: 5;
+}
+
+#num0,
+#equal_sign {
+  grid-row: 5;
+}
+
+#num0 {
+  grid-column: 1;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+  background: green;
+  color: white;
+  font-size: 2rem;
+}
+
+button:hover {
+  outline: none;
+  border: 2px green solid;
+}
